@@ -1,0 +1,9 @@
+gstools
+ipython
+matplotlib
+numpy
+pandas
+scikit-image
+scipy
+seaborn
+tqdm
