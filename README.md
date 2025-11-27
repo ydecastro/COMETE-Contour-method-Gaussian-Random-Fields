@@ -1,6 +1,6 @@
 # Anisotropic Gaussian Field Notebooks
 
-This workspace gathers the notebooks and helper routines used to simulate anisotropic Gaussian random fields, extract Cabana/LKC statistics from their contour sets, and evaluate downstream hypothesis tests. The material is organized by workflow stage so individual notebooks stay focused and reproducible.
+This workspace gathers the notebooks and helper routines used to simulate anisotropic Gaussian random fields, extract Contour/LKC statistics from their contour sets, and evaluate downstream hypothesis tests. The material is organized by workflow stage so individual notebooks stay focused and reproducible.
 
 ## Repository Layout
 
@@ -9,6 +9,7 @@ This workspace gathers the notebooks and helper routines used to simulate anisot
 | `simulations_paper.ipynb` | End-to-end simulation loop generating Gaussian fields, extracting contour summaries, and persisting CSV outputs for later analysis. |
 | `notebook_paper.ipynb` | Post-processing notebook that ingests simulation CSVs, compares theoretical vs empirical summaries, and builds the plots used in the paper. |
 | `example.ipynb` | A concise, fully commented walkthrough of the simulation and estimator pipeline, intended as an onboarding aid for readers who want to reproduce a single run before tackling the full experiments. |
+| `Planck_experiments.ipynb` | Reproduces Contour/LKC statistics on real Planck full-sky temperature maps, documenting each processing step (loading, contour extraction, sampling, statistics) for reproducibility. |
 | `0_visualisation_paper*.ipynb` | Optional visualization notebooks illustrating intermediate grids, contour normals, and diagnostic figures. |
 
 Supporting assets live under `data/` (input rasters and textures), `plots*/` (cached figures), and `results/` (saved tables).
@@ -22,7 +23,8 @@ Supporting assets live under `data/` (input rasters and textures), `plots*/` (ca
 ## Usage Notes
 
 - All notebooks are self-contained and read/write paths relative to the repository root.
-- `example.ipynb` is the recommended entry point: run it top-to-bottom to confirm dependencies and understand the Cabana/Biermé–Desolneux estimators before scaling up.
+- `example.ipynb` is the recommended entry point: run it top-to-bottom to confirm dependencies and understand the Contour/LKC estimators before scaling up.
+- `Planck_experiments.ipynb` mirrors the same pipeline on observational data, so review its markdown cells if you are validating the theoretical framework against Planck products.
 - `simulations_paper.ipynb` may take minutes to complete depending on grid size and number of Monte Carlo samples; adjust the configuration cells at the top of the notebook to trade accuracy for speed.
 
 ## Reproducing Paper Figures
