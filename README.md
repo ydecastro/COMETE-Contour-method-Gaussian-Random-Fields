@@ -9,22 +9,21 @@ This workspace gathers the notebooks and helper routines used to simulate anisot
 | `simulations_paper.ipynb` | End-to-end simulation loop generating Gaussian fields, extracting contour summaries, and persisting CSV outputs for later analysis. |
 | `notebook_paper.ipynb` | Post-processing notebook that ingests simulation CSVs, compares theoretical vs empirical summaries, and builds the plots used in the paper. |
 | `example.ipynb` | A concise, fully commented walkthrough of the simulation and estimator pipeline, intended as an onboarding aid for readers who want to reproduce a single run before tackling the full experiments. |
-| `Planck_experiments.ipynb` | Reproduces Contour/LKC statistics on real Planck full-sky temperature maps, documenting each processing step (loading, contour extraction, sampling, statistics) for reproducibility. |
-| `0_visualisation_paper*.ipynb` | Optional visualization notebooks illustrating intermediate grids, contour normals, and diagnostic figures. |
+| `Planck_experiments.ipynb` | Reproduces Contour/LKC statistics on real Planck CMB maps, documenting each processing step (loading, contour extraction, sampling, statistics) for reproducibility. |
 
 Supporting assets live under `data/` (input rasters and textures), `plots*/` (cached figures), and `results/` (saved tables).
 
 ## Getting Started
 
 1. Create and activate a fresh Python 3.11+ environment.
-2. Install the scientific stack (numpy, scipy, pandas, matplotlib, seaborn, scikit-image, gstools, tqdm). A `requirements.txt` can be generated via `pip freeze` after installing the exact versions you need.
+2. Install the scientific stack (numpy, scipy, pandas, matplotlib, seaborn, scikit-image, gstools, tqdm). 
 3. Launch JupyterLab (or VS Code) in this folder and open the notebook that matches your workflow stage.
 
 ## Usage Notes
 
 - All notebooks are self-contained and read/write paths relative to the repository root.
 - `example.ipynb` is the recommended entry point: run it top-to-bottom to confirm dependencies and understand the Contour/LKC estimators before scaling up.
-- `Planck_experiments.ipynb` mirrors the same pipeline on observational data, so review its markdown cells if you are validating the theoretical framework against Planck products.
+- `Planck_experiments.ipynb` mirrors the same pipeline on observational data, so review its markdown cells if you are validating the theoretical framework against Planck CMB maps.
 - `simulations_paper.ipynb` may take minutes to complete depending on grid size and number of Monte Carlo samples; adjust the configuration cells at the top of the notebook to trade accuracy for speed.
 
 ## Reproducing Paper Figures
