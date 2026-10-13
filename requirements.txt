@@ -1,9 +1,10 @@
-gstools
-ipython
-matplotlib
-numpy
-pandas
-scikit-image
-scipy
-seaborn
-tqdm
+numpy>=1.26
+scipy>=1.11
+pandas>=2.0
+matplotlib>=3.8
+contourpy>=1.2
+seaborn>=0.13
+scikit-image>=0.22
+healpy>=1.17        # Planck experiment only
+astropy>=6.0        # dependency of healpy
+jupyter             # to run the notebook
